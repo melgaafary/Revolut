@@ -1,6 +1,5 @@
 import React from 'react';
 import {string, func, oneOfType, number} from 'prop-types';
-import {Down} from 'grommet-icons';
 import {Box, Text} from 'grommet';
 import styled from 'styled-components';
 

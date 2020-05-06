@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import ExchangeScreen from '../components/exchange/';
+import ExchangeScreen from '../components/exchange';
 import ExchangeState from '../state/exchange';
-import useInterval from '../hooks/interval';
 import {isValidCurrency} from '../utils';
 
 const INITIAL_STATE = {
@@ -31,7 +30,7 @@ export default function Exchange() {
   useEffect(() => {
     // Change the base is not for free users
     // But code should work to support it
-    //getRates(inGoingPocket.id);
+    // getRates(inGoingPocket.id);
     getRates();
   }, []);
   useEffect(() => {
@@ -44,9 +43,9 @@ export default function Exchange() {
     );
   }, [inGoingPocket.id, outGoingPocket.id, rates]);
 
-  //useInterval(() => {
-  //getRates();
-  //}, 10000);
+  // useInterval(() => {
+  // getRates();
+  // }, 10000);
 
   const reversePockets = () => {
     const inGoingPocketId = inGoingPocket.id;
@@ -59,14 +58,14 @@ export default function Exchange() {
       return reversePockets();
     }
 
-    setInGoingPocket(pockets[pocketId]);
+    return setInGoingPocket(pockets[pocketId]);
   };
   const onOutGoingPocketChange = pocketId => {
     if (pocketId === inGoingPocket.id) {
       return reversePockets();
     }
 
-    setOutGoingPocket(pockets[pocketId]);
+    return setOutGoingPocket(pockets[pocketId]);
   };
   const onExchange = () => {
     const inGoingBalance = Number(inGoingPocket.balance) - Number(form.inGoing);

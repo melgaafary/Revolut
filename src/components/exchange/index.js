@@ -1,5 +1,5 @@
 import React from 'react';
-import {number, string, shape, func, object, oneOfType} from 'prop-types';
+import {number, string, shape, func, oneOfType} from 'prop-types';
 import styled from 'styled-components';
 import {Box, Button, Text} from 'grommet';
 import {LineChart, Transaction} from 'grommet-icons';
@@ -54,7 +54,8 @@ export default function Exchange({
         fill
         direction="row"
         justify="between"
-        pad={{horizontal: 'large', vertical: 'large'}}>
+        pad={{horizontal: 'large', vertical: 'large'}}
+      >
         <CurrencyBox
           pocket={inGoingPocket}
           availablePockets={availablePockets}
@@ -73,14 +74,16 @@ export default function Exchange({
         style={{position: 'relative'}}
         background="#F3F4F5"
         justify="between"
-        fill>
+        fill
+      >
         <Box
           style={{
             position: 'absolute',
             top: -25,
             left: 40,
             textAlign: 'center',
-          }}>
+          }}
+        >
           <RotatedBox
             background="#fff"
             border={{color: 'light-4'}}
@@ -90,7 +93,8 @@ export default function Exchange({
             align="center"
             justify="center"
             direction="row"
-            gap="small">
+            gap="small"
+          >
             <Button
               onClick={reversePockets}
               icon={<Transaction color="#2d65e3" />}
@@ -105,7 +109,8 @@ export default function Exchange({
             left: 0,
             right: 0,
             textAlign: 'center',
-          }}>
+          }}
+        >
           <Box
             round="20px"
             background="#fff"
@@ -116,7 +121,8 @@ export default function Exchange({
             justify="center"
             direction="row"
             gap="small"
-            margin="auto">
+            margin="auto"
+          >
             <LineChart color="#2d65e3" />
             <Text color="#2d65e3" size="large">
               1{CURRENCY_ICON_MAP[inGoingPocket.id]} ={' '}
@@ -161,7 +167,7 @@ Exchange.defaultProps = {
 };
 
 Exchange.propTypes = {
-  availablePockets: object,
+  availablePockets: shape({}),
   onInGoingPocketChange: func.isRequired,
   onOutGoingPocketChange: func.isRequired,
   inGoingPocket: shape(pocketShape).isRequired,

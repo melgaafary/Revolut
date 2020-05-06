@@ -48,7 +48,6 @@ describe('[Component] Exchange', () => {
     expect(tree).toMatchSnapshot();
   });
   it('should have CurrencyBox and CurrencyForm components', () => {
-    const mockOnChange = jest.fn();
     const component = mount(
       <Exchange
         inGoingPocket={inGoingPocket}
@@ -59,14 +58,12 @@ describe('[Component] Exchange', () => {
         onFormChange={mockFn}
         form={form}
         onExchange={mockFn}
-        onFormChange={mockOnChange}
       />,
     );
     expect(component.find(CurrencyBox)).toHaveLength(2);
     expect(component.find(CurrencyForm)).toHaveLength(2);
   });
   it('should have disabled exchange button', () => {
-    const mockOnChange = jest.fn();
     const component = mount(
       <Exchange
         inGoingPocket={inGoingPocket}
@@ -77,7 +74,6 @@ describe('[Component] Exchange', () => {
         onOutGoingPocketChange={mockFn}
         form={form}
         onExchange={mockFn}
-        onFormChange={mockOnChange}
       />,
     );
     expect(
@@ -88,7 +84,6 @@ describe('[Component] Exchange', () => {
     ).toEqual(true);
   });
   it('should have disabled exchange button because limit is exceeded', () => {
-    const mockOnChange = jest.fn();
     const component = mount(
       <Exchange
         inGoingPocket={inGoingPocket}
@@ -100,7 +95,6 @@ describe('[Component] Exchange', () => {
         form={{inGoing: 23, outGoing: 12.23}}
         error="Exceeds limit"
         onExchange={mockFn}
-        onFormChange={mockOnChange}
       />,
     );
     expect(
@@ -111,7 +105,6 @@ describe('[Component] Exchange', () => {
     ).toBeTruthy();
   });
   it('should exchange button be enabled', () => {
-    const mockOnChange = jest.fn();
     const component = mount(
       <Exchange
         inGoingPocket={inGoingPocket}
@@ -122,7 +115,6 @@ describe('[Component] Exchange', () => {
         onOutGoingPocketChange={mockFn}
         form={{inGoing: 23, outGoing: 12.23}}
         onExchange={mockFn}
-        onFormChange={mockOnChange}
       />,
     );
     expect(

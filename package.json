@@ -7,7 +7,8 @@
     "start": "webpack-dev-server --hot --open --mode development",
     "build": "webpack --mode production",
     "test": "jest --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint \"**/*.js\" --fix"
   },
   "author": "Mostafa Elgaafary",
   "license": "ISC",
@@ -17,13 +18,24 @@
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.0.1",
     "jest-styled-components": "^7.0.2",
+    "prettier": "^2.0.5",
+    "prettier-eslint": "^9.0.1",
     "react-test-renderer": "^16.13.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
@@ -39,5 +51,11 @@
     "styled-components": "^5.1.0",
     "styled-reset": "^4.1.4",
     "unstated-next": "^1.1.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "avoid",
+    "bracketSpacing": false
   }
 }

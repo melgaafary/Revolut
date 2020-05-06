@@ -1,4 +1,4 @@
-import {useState, useCallback, useEffect} from 'react';
+import {useState, useCallback} from 'react';
 import {createContainer} from 'unstated-next';
 
 export function useExchange() {

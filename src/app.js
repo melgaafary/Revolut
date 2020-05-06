@@ -3,7 +3,7 @@ import reset from 'styled-reset';
 import {createGlobalStyle} from 'styled-components';
 import {Grommet} from 'grommet';
 
-import Exchange from './containers/exchange.js';
+import Exchange from './containers/exchange';
 import ExchangeState from './state/exchange';
 
 const GlobalStyle = createGlobalStyle`
