@@ -44,9 +44,9 @@ export default function Exchange() {
     );
   }, [inGoingPocket.id, outGoingPocket.id, rates]);
 
-  useInterval(() => {
-    getRates();
-  }, 10000);
+  //useInterval(() => {
+  //getRates();
+  //}, 10000);
 
   const reversePockets = () => {
     const inGoingPocketId = inGoingPocket.id;
@@ -69,13 +69,27 @@ export default function Exchange() {
     setOutGoingPocket(pockets[pocketId]);
   };
   const onExchange = () => {
+    const inGoingBalance = Number(inGoingPocket.balance) - Number(form.inGoing);
+    const outGoingBalance =
+      Number(outGoingPocket.balance) + Number(form.outGoing);
+    setPockets({
+      ...pockets,
+      [inGoingPocket.id]: {
+        ...inGoingPocket,
+        balance: inGoingBalance,
+      },
+      [outGoingPocket.id]: {
+        ...outGoingPocket,
+        balance: outGoingBalance,
+      },
+    });
     setInGoingPocket({
       ...inGoingPocket,
-      balance: Number(inGoingPocket.balance) - Number(form.inGoing),
+      balance: inGoingBalance,
     });
     setOutGoingPocket({
       ...outGoingPocket,
-      balance: Number(outGoingPocket.balance) + Number(form.outGoing),
+      balance: outGoingBalance,
     });
     setForm({inGoing: '', outGoing: ''});
   };
@@ -83,9 +97,15 @@ export default function Exchange() {
     const {
       target: {name, value},
     } = e;
-    const rateValue = isValidCurrency(value * rate) || '';
+    const rateValue =
+      name === 'inGoing'
+        ? isValidCurrency(value * rate)
+        : isValidCurrency(value / rate);
     const validatedValue = isValidCurrency(value);
-    if (value > inGoingPocket.balance || rateValue > inGoingPocket.balance) {
+    if (
+      (name === 'inGoing' && value > inGoingPocket.balance) ||
+      (name === 'outGoing' && rateValue > inGoingPocket.balance)
+    ) {
       setError('Exceeds limit');
     } else {
       setError(null);

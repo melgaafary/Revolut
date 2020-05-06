@@ -1,5 +1,5 @@
 import React from 'react';
-import {number, string, shape, func, object} from 'prop-types';
+import {number, string, shape, func, object, oneOfType} from 'prop-types';
 import styled from 'styled-components';
 import {Box, Button, Text} from 'grommet';
 import {LineChart, Transaction} from 'grommet-icons';
@@ -161,14 +161,17 @@ Exchange.defaultProps = {
 };
 
 Exchange.propTypes = {
-  availablePockets: shape(object),
+  availablePockets: object,
   onInGoingPocketChange: func.isRequired,
   onOutGoingPocketChange: func.isRequired,
   inGoingPocket: shape(pocketShape).isRequired,
   outGoingPocket: shape(pocketShape).isRequired,
   reversePockets: func.isRequired,
   rate: number,
-  form: shape({inGoing: string, outGoing: string}).isRequired,
+  form: shape({
+    inGoing: oneOfType([string, number]),
+    outGoing: oneOfType([string, number]),
+  }).isRequired,
   error: string,
   onFormChange: func.isRequired,
   onExchange: func.isRequired,

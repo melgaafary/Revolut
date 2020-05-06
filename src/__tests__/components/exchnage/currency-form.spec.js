@@ -4,13 +4,13 @@ import renderer from 'react-test-renderer';
 import CurrencyForm from '../../../components/exchange/currency-form';
 
 describe('[Component] CurrencyForm', () => {
+  const mockOnChange = jest.fn();
   it('should match the snapshot', () => {
-    const component = <CurrencyForm />;
+    const component = <CurrencyForm name="inGoing" onChange={mockOnChange} />;
     const tree = renderer.create(component).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('should show correct ingoing value', () => {
-    const mockOnChange = jest.fn();
     const component = mount(
       <CurrencyForm value={200} name="inGoing" onChange={mockOnChange} />,
     );
@@ -18,7 +18,6 @@ describe('[Component] CurrencyForm', () => {
     expect(component.find('span').text()).toEqual('-');
   });
   it('should show correct outgoing value', () => {
-    const mockOnChange = jest.fn();
     const component = mount(
       <CurrencyForm value={200} name="outGoing" onChange={mockOnChange} />,
     );
@@ -26,7 +25,6 @@ describe('[Component] CurrencyForm', () => {
     expect(component.find('span').text()).toEqual('+');
   });
   it('should show error', () => {
-    const mockOnChange = jest.fn();
     const component = mount(
       <CurrencyForm
         value={200}

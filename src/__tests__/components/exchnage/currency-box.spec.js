@@ -24,16 +24,25 @@ const availablePockets = {
 const pocket = availablePockets.USD;
 
 describe('[Component] CurrencyBox', () => {
+  const mockOnChange = jest.fn();
   it('should match the snapshot', () => {
     const component = (
-      <CurrencyBox pocket={pocket} availablePockets={availablePockets} />
+      <CurrencyBox
+        onCurrencyChange={mockOnChange}
+        pocket={pocket}
+        availablePockets={availablePockets}
+      />
     );
     const tree = renderer.create(component).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('should show 4 currencies when currency selection button is clicked', () => {
     const component = mount(
-      <CurrencyBox pocket={pocket} availablePockets={availablePockets} />,
+      <CurrencyBox
+        onCurrencyChange={mockOnChange}
+        pocket={pocket}
+        availablePockets={availablePockets}
+      />,
     );
     component.find('button').simulate('click');
     expect(component.find('button div span')).toHaveLength(4);
@@ -52,7 +61,11 @@ describe('[Component] CurrencyBox', () => {
   });
   it('should display the correct currency and balance', () => {
     const component = mount(
-      <CurrencyBox pocket={pocket} availablePockets={availablePockets} />,
+      <CurrencyBox
+        onCurrencyChange={mockOnChange}
+        pocket={pocket}
+        availablePockets={availablePockets}
+      />,
     );
     expect(
       component

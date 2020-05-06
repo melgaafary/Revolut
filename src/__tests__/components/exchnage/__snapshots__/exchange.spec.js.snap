@@ -78,6 +78,7 @@ exports[`[Component] Exchange should match the snapshot 1`] = `
           <input
             className="sc-AxiKw jYPQiI"
             name="inGoing"
+            onChange={[MockFunction]}
             placeholder="0"
             type="number"
             value=""
@@ -111,6 +112,7 @@ exports[`[Component] Exchange should match the snapshot 1`] = `
         <button
           className="StyledButton-sc-323bzc-0 ihwGJO"
           onBlur={[Function]}
+          onClick={[MockFunction]}
           onFocus={[Function]}
           onMouseOut={[Function]}
           onMouseOver={[Function]}
@@ -241,6 +243,7 @@ exports[`[Component] Exchange should match the snapshot 1`] = `
             <input
               className="sc-AxiKw jYPQiI"
               name="outGoing"
+              onChange={[MockFunction]}
               placeholder="0"
               type="number"
               value=""
@@ -256,6 +259,7 @@ exports[`[Component] Exchange should match the snapshot 1`] = `
         className="StyledButton-sc-323bzc-0 gPeNRg sc-AxgMl bqmKOs"
         disabled={true}
         onBlur={[Function]}
+        onClick={[MockFunction]}
         onFocus={[Function]}
         onMouseOut={[Function]}
         onMouseOver={[Function]}

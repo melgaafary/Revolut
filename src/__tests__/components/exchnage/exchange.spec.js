@@ -30,11 +30,17 @@ const form = {
 const inGoingPocket = availablePockets.USD;
 const outGoingPocket = availablePockets.CAD;
 describe('[Component] Exchange', () => {
+  const mockFn = jest.fn();
   it('should match the snapshot', () => {
     const component = (
       <Exchange
         inGoingPocket={inGoingPocket}
         outGoingPocket={outGoingPocket}
+        onInGoingPocketChange={mockFn}
+        onOutGoingPocketChange={mockFn}
+        onFormChange={mockFn}
+        onExchange={mockFn}
+        reversePockets={mockFn}
         form={form}
       />
     );
@@ -47,7 +53,12 @@ describe('[Component] Exchange', () => {
       <Exchange
         inGoingPocket={inGoingPocket}
         outGoingPocket={outGoingPocket}
+        onInGoingPocketChange={mockFn}
+        onOutGoingPocketChange={mockFn}
+        reversePockets={mockFn}
+        onFormChange={mockFn}
         form={form}
+        onExchange={mockFn}
         onFormChange={mockOnChange}
       />,
     );
@@ -60,7 +71,12 @@ describe('[Component] Exchange', () => {
       <Exchange
         inGoingPocket={inGoingPocket}
         outGoingPocket={outGoingPocket}
+        onInGoingPocketChange={mockFn}
+        reversePockets={mockFn}
+        onFormChange={mockFn}
+        onOutGoingPocketChange={mockFn}
         form={form}
+        onExchange={mockFn}
         onFormChange={mockOnChange}
       />,
     );
@@ -77,8 +93,13 @@ describe('[Component] Exchange', () => {
       <Exchange
         inGoingPocket={inGoingPocket}
         outGoingPocket={outGoingPocket}
+        onInGoingPocketChange={mockFn}
+        reversePockets={mockFn}
+        onFormChange={mockFn}
+        onOutGoingPocketChange={mockFn}
         form={{inGoing: 23, outGoing: 12.23}}
         error="Exceeds limit"
+        onExchange={mockFn}
         onFormChange={mockOnChange}
       />,
     );
@@ -95,7 +116,12 @@ describe('[Component] Exchange', () => {
       <Exchange
         inGoingPocket={inGoingPocket}
         outGoingPocket={outGoingPocket}
+        onInGoingPocketChange={mockFn}
+        onFormChange={mockFn}
+        reversePockets={mockFn}
+        onOutGoingPocketChange={mockFn}
         form={{inGoing: 23, outGoing: 12.23}}
+        onExchange={mockFn}
         onFormChange={mockOnChange}
       />,
     );

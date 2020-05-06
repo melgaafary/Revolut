@@ -87,7 +87,7 @@ CurrencyBox.defaultProps = {
 
 CurrencyBox.propTypes = {
   pocket: shape({balance: number.isRequired, id: string.isRequired}),
-  availablePockets: shape(object),
   onCurrencyChange: func.isRequired,
   error: string,
+  availablePockets: object,
 };

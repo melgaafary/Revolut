@@ -17,8 +17,11 @@ exports[`[Component] CurrencyForm should match the snapshot 1`] = `
     >
       <input
         className="sc-AxjAm kcUFxv"
+        name="inGoing"
+        onChange={[MockFunction]}
         placeholder="0"
         type="number"
+        value=""
       />
     </div>
   </div>

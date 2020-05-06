@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, func} from 'prop-types';
+import {string, func, oneOfType, number} from 'prop-types';
 import {Down} from 'grommet-icons';
 import {Box, Text} from 'grommet';
 import styled from 'styled-components';
@@ -44,6 +44,6 @@ CurrencyForm.defaultProps = {
 CurrencyForm.propTypes = {
   onChange: func.isRequired,
   name: string.isRequired,
-  value: string,
+  value: oneOfType([string, number]),
   error: string,
 };
