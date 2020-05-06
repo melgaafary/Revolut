@@ -1,0 +1,5 @@
+{
+  "testRegex": "((\\.|/*.)(spec))\\.js?$",
+  "setupFilesAfterEnv": ["<rootDir>src/__tests__/setupTests.js"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
+}

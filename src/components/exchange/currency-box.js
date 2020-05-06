@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {number, string} from 'prop-types';
+import {func, string, number, shape, object} from 'prop-types';
 import {Down} from 'grommet-icons';
 import {Layer, Box, Text, Button} from 'grommet';
 import styled from 'styled-components';
@@ -59,7 +59,7 @@ export default function CurrencyBox({
                     onCurrencyChange(id);
                     setCurrencyModal(false);
                   }}>
-                  <Box align="flex-start">
+                  <Box align="start">
                     <Text size="xlarge">{id}</Text>
                   </Box>
                 </Button>
@@ -79,3 +79,15 @@ export default function CurrencyBox({
     </Box>
   );
 }
+
+CurrencyBox.defaultProps = {
+  error: null,
+  availablePockets: {},
+};
+
+CurrencyBox.propTypes = {
+  pocket: shape({balance: number.isRequired, id: string.isRequired}),
+  availablePockets: shape(object),
+  onCurrencyChange: func.isRequired,
+  error: string,
+};

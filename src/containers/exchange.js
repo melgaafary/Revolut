@@ -23,7 +23,7 @@ export default function Exchange() {
   const [pockets, setPockets] = useState(INITIAL_STATE);
   const [inGoingPocket, setInGoingPocket] = useState(pockets.USD);
   const [outGoingPocket, setOutGoingPocket] = useState(pockets.EUR);
-  const [form, setForm] = useState({inGoing: null, outGoing: null});
+  const [form, setForm] = useState({inGoing: '', outGoing: ''});
   const [error, setError] = useState(null);
   const [rate, setRate] = useState(0);
   const {getRates, rates} = ExchangeState.useContainer();
@@ -44,9 +44,9 @@ export default function Exchange() {
     );
   }, [inGoingPocket.id, outGoingPocket.id, rates]);
 
-  //useInterval(() => {
-  //getRates();
-  //}, 10000);
+  useInterval(() => {
+    getRates();
+  }, 10000);
 
   const reversePockets = () => {
     const inGoingPocketId = inGoingPocket.id;

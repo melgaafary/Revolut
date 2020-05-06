@@ -1,9 +1,8 @@
 import React from 'react';
-import {number, string} from 'prop-types';
+import {string, func} from 'prop-types';
 import {Down} from 'grommet-icons';
 import {Box, Text} from 'grommet';
 import styled from 'styled-components';
-import AutosizeInput from 'react-input-autosize';
 
 const StyledInput = styled.input`
   border: none;
@@ -36,3 +35,15 @@ export default function CurrencyForm({value, onChange, name, error}) {
     </Box>
   );
 }
+
+CurrencyForm.defaultProps = {
+  error: null,
+  value: '',
+};
+
+CurrencyForm.propTypes = {
+  onChange: func.isRequired,
+  name: string.isRequired,
+  value: string,
+  error: string,
+};

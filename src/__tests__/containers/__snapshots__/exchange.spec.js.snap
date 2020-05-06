@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Container] Exchange should match the snapshot 1`] = `
+<section
+  className="sc-AxhUy kDUAJF"
+>
+  <h1
+    className="sc-AxhCb fbDKCR"
+  >
+    Exchange
+  </h1>
+  <div
+    className="StyledBox-sc-13pk1d4-0 jnCRVz"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 dxtVvB"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hErwNa"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 jpqZaM"
+          size="xlarge"
+        >
+          USD
+        </span>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+        />
+        <button
+          className="StyledButton-sc-323bzc-0 dnCEuz"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          type="button"
+        >
+          <svg
+            aria-label="Down"
+            className="StyledIcon-ofa7kd-0 jXwebn"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="7.086 3.174 17.086 13.174 7.086 23.174"
+              stroke="#000"
+              strokeWidth="2"
+              transform="scale(1 -1) rotate(-89 -1.32 0)"
+            />
+          </svg>
+        </button>
+      </div>
+      <span
+        className="StyledText-sc-1sadyjn-0 ejzSet"
+        size="large"
+      >
+        Balance: 
+        432.00
+         
+        $
+      </span>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 cfvjOn"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 eitMOG"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 irGvOS"
+        >
+          
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 jJdKAu"
+        >
+          <input
+            className="sc-AxiKw jYPQiI"
+            name="inGoing"
+            onChange={[Function]}
+            placeholder="0"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="StyledBox-sc-13pk1d4-0 lemlLS"
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 jJdKAu"
+      style={
+        Object {
+          "left": 40,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": -25,
+        }
+      }
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 cZvKmd sc-AxheI eQGiou"
+      >
+        <button
+          className="StyledButton-sc-323bzc-0 ihwGJO"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          type="button"
+        >
+          <svg
+            aria-label="Transaction"
+            className="StyledIcon-ofa7kd-0 bersCX"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M2,7 L20,7 M16,2 L21,7 L16,12 M22,17 L4,17 M8,12 L3,17 L8,22"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jJdKAu"
+      style={
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "center",
+          "top": -25,
+        }
+      }
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 bHWATJ"
+      >
+        <svg
+          aria-label="LineChart"
+          className="StyledIcon-ofa7kd-0 bersCX"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M1,16 L8,9 L13,14 L23,4 M0,22 L23.999,22 M16,4 L23,4 L23,11"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+        />
+        <span
+          className="StyledText-sc-1sadyjn-0 kGDxKf"
+          size="large"
+        >
+          1
+          $
+           =
+           
+          0.0000
+          €
+        </span>
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 ibqE"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 dxtVvB"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hErwNa"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 jpqZaM"
+            size="xlarge"
+          >
+            EUR
+          </span>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+          />
+          <button
+            className="StyledButton-sc-323bzc-0 dnCEuz"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Down"
+              className="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7.086 3.174 17.086 13.174 7.086 23.174"
+                stroke="#000"
+                strokeWidth="2"
+                transform="scale(1 -1) rotate(-89 -1.32 0)"
+              />
+            </svg>
+          </button>
+        </div>
+        <span
+          className="StyledText-sc-1sadyjn-0 ejzSet"
+          size="large"
+        >
+          Balance: 
+          300.00
+           
+          €
+        </span>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 cfvjOn"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 eitMOG"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 irGvOS"
+          >
+            
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 jJdKAu"
+          >
+            <input
+              className="sc-AxiKw jYPQiI"
+              name="outGoing"
+              onChange={[Function]}
+              placeholder="0"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 gVSbfC"
+    >
+      <button
+        className="StyledButton-sc-323bzc-0 gPeNRg sc-AxgMl bqmKOs"
+        disabled={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        type="button"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 gAcgG"
+          size="large"
+        >
+          Exchange
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+`;

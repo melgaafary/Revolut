@@ -1,5 +1,5 @@
 import React from 'react';
-import {number, string} from 'prop-types';
+import {number, string, shape, func, object} from 'prop-types';
 import styled from 'styled-components';
 import {Box, Button, Text} from 'grommet';
 import {LineChart, Transaction} from 'grommet-icons';
@@ -47,7 +47,6 @@ export default function Exchange({
   onFormChange,
   onExchange,
 }) {
-  console.log(error);
   return (
     <Section>
       <Header>Exchange</Header>
@@ -117,7 +116,7 @@ export default function Exchange({
             justify="center"
             direction="row"
             gap="small"
-            margin={{vertical: 0, horizontal: 'auto'}}>
+            margin="auto">
             <LineChart color="#2d65e3" />
             <Text color="#2d65e3" size="large">
               1{CURRENCY_ICON_MAP[inGoingPocket.id]} ={' '}
@@ -141,7 +140,7 @@ export default function Exchange({
         <Box align="center">
           <ExchangeButton
             onClick={onExchange}
-            disabled={error || !form.inGoing}
+            disabled={Boolean(error) || !form.inGoing}
             label={
               <Text size="large" color="light-1">
                 Exchange
@@ -153,6 +152,24 @@ export default function Exchange({
     </Section>
   );
 }
-Exchange.defaultProps = {};
+const pocketShape = {balance: number.isRequired, id: string.isRequired};
 
-Exchange.propTypes = {};
+Exchange.defaultProps = {
+  error: null,
+  rate: null,
+  availablePockets: {},
+};
+
+Exchange.propTypes = {
+  availablePockets: shape(object),
+  onInGoingPocketChange: func.isRequired,
+  onOutGoingPocketChange: func.isRequired,
+  inGoingPocket: shape(pocketShape).isRequired,
+  outGoingPocket: shape(pocketShape).isRequired,
+  reversePockets: func.isRequired,
+  rate: number,
+  form: shape({inGoing: string, outGoing: string}).isRequired,
+  error: string,
+  onFormChange: func.isRequired,
+  onExchange: func.isRequired,
+};
