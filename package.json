@@ -12,6 +12,7 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
@@ -23,9 +24,14 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "grommet": "^2.13.0",
+    "grommet-icons": "^4.4.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "styled-components": "^5.1.0"
+    "react-input-autosize": "^2.2.2",
+    "styled-components": "^5.1.0",
+    "styled-reset": "^4.1.4",
+    "unstated-next": "^1.1.0"
   }
 }
