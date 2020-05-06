@@ -10,7 +10,7 @@ should run http://localhost:8080
 
 ## Stack used
 - React
-- React hooks  - for the state
+- React hooks and [unstated-next](https://github.com/jamiebuilds/unstated-next)  - for the state management
 - Grommet - for UI components
 - Jest/enzyme
 - Eslint and airbnb config
